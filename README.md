@@ -14,7 +14,7 @@ if [ $USER = "root" ]; then USR="$SUDO_USER"; fi
 
 # Get updates
 UPDATES=$(sudo -u "$USR" 'n\n' 2>/dev/null | flatpak update | grep -Eo "^[\ ]*[0-9]+\..*" --color=none)
-UPDATES_NB=$(echo "$UPDATES" | tr -d '\n' | wc -l)
+UPDATES_NB=$(echo "$UPDATES" | sed -z '$ s/\n$//' | wc -l)
 
 if [ $UPDATES_NB = "0" ]; then
 	echo "Flatpak: No Updates found, skipping..."
