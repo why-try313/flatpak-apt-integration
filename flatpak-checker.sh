@@ -4,7 +4,7 @@
 # file: /etc/apt/apt.conf.d/05flatpak-hook 
 # contents: APT::Update::Post-Invoke {"/my/path/to/this/file/flatpak-checker.sh"};
 
-echo "Checking Flatpak updates availible..."
+echo "Checking Flatpak updates available..."
 USR="$USER" # Switch  back to curent user instead of sudo:root
 if [ $USER = "root" ]; then USR="$SUDO_USER"; fi
 
