@@ -1,5 +1,6 @@
 A simple script to check for flatpak updates when `apt update` runs
-You can grab the file [flatpak-checker.sh](https://github.com/why-try313/flatpak-apt-integration/blob/b12683b72a6925cb6655ccf143d5bf773e7485d6/flatpak-checker.sh) or copy paste the code below (same content as the file)
+
+You can grab the file [flatpak-checker.sh](https://github.com/why-try313/flatpak-apt-integration/blob/b12683b72a6925cb6655ccf143d5bf773e7485d6/flatpak-checker.sh) or copy paste the code below (copy of flatpak-checker.sh for quick access)
 
 ```bash
 # !/bin/bash
@@ -26,12 +27,13 @@ echo "$UPDATES"
 echo '[i] To udpdate, make sure you run "flatpak update"'
 ```
 
-### Installation
-As the first comments of the file say:
-1. create your `/etc/apt/apt.conf.d/05flatpak-hook` (name it at your conveninece)
-2. Paste and edit the path to your flatpak-checker.sh: `APT::Update::Post-Invoke {"/my/path/to/this/file/flatpak-checker.sh"};`
-3. That's pretty much it
+# Installation
+
+1. Either:<br> - Git-clone this repo <br> - Download [flatpak-checker.sh](https://github.com/why-try313/flatpak-apt-integration/blob/b12683b72a6925cb6655ccf143d5bf773e7485d6/flatpak-checker.sh) <br> - Create your `.sh` file and paste the contents above - it's identical to [flatpak-checker.sh](https://github.com/why-try313/flatpak-apt-integration/blob/b12683b72a6925cb6655ccf143d5bf773e7485d6/flatpak-checker.sh)
+2. Create your `/etc/apt/apt.conf.d/05flatpak-hook`
+3. Paste and edit the path to your `flatpak-checker.sh` in your `05flatpak-hook` file: <br> `APT::Update::Post-Invoke {"/my/path/to/this/file/flatpak-checker.sh"};`
+5. That's pretty much it
 
 
-### Usage
+# Usage
 Just run `sudo apt update`, the hook will check for updates and display them if there's any
