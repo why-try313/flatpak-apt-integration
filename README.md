@@ -37,3 +37,5 @@ echo '[i] To udpdate, make sure you run "flatpak update"'
 
 # Usage
 Just run `sudo apt update`, the hook will check for updates and display them if there's any
+<br>
+<img src="screenshot.jpg"/>
